@@ -1,0 +1,16 @@
+{
+  "name": "shapes-drawer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.tsx",
+  "scripts": {
+    "start:local": "concurrently \"cd backend && nodemon app.ts \" \"cd frontend && npm start\"",
+    "start:withdocker": "concurrently \"cd backend && docker-compose up -d \" \"cd frontend && npm start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
