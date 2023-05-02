@@ -1,11 +1,11 @@
 ## Overview
 
-This repository is a ReactJS app with a back and frontend.
-Here are the steps to run it:
+This repository is a ReactJS app for drawing 1D/2D shapes, with a back and frontend.
+Here are the steps install and run it:
 
 ### Install modules
 
-perform the current folder, ./backend and ./frontend:
+Perform the current directory, ./backend and ./frontend:
 
 ```bash
 npm i
