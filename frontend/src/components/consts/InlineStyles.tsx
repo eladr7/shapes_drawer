@@ -1,3 +1,5 @@
+import React from "react";
+
 export const mainBox = {
   display: "flex",
   flexDirection: "column",
@@ -10,7 +12,14 @@ export const canvasTitle = { my: 2, textAlign: "center", color: "blueviolet" };
 export const announcement = { textAlign: "center" };
 export const canvasContainer = {
   width: { xs: "70%" },
+  aspectRatio: "16/9",
   mx: 2,
+};
+
+export const canvas: React.CSSProperties = {
+  width: "100%",
+  height: "100%",
+  objectFit: "contain",
 };
 
 export const buttonsContainer = {

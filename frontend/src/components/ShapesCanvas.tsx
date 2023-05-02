@@ -3,7 +3,7 @@ import { DRAWER_ACTIONS } from "./consts/definitions";
 import { ShapesContext } from "./context/ShapesContext";
 import { redrawShapes } from "./canvasHelpers";
 import { Paper } from "@mui/material";
-import { canvasContainer } from "./consts/InlineStyles";
+import { canvas, canvasContainer } from "./consts/InlineStyles";
 
 interface ShapesCanvasProps {}
 export const ShapesCanvas: React.FC<ShapesCanvasProps> = () => {
@@ -18,7 +18,7 @@ export const ShapesCanvas: React.FC<ShapesCanvasProps> = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
-    if (ctx) {
+    if (ctx && canvas) {
       redrawShapes(ctx, canvas, shapesData);
     }
   }, [shapesData.shapes]);
@@ -56,9 +56,8 @@ export const ShapesCanvas: React.FC<ShapesCanvasProps> = () => {
   return (
     <Paper elevation={10} sx={canvasContainer}>
       <canvas
+        style={canvas}
         ref={canvasRef}
-        width={800}
-        height={600}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}

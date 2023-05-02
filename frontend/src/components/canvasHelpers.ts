@@ -58,10 +58,14 @@ export const buttonDispatcher = async (
 
 export const redrawShapes = (
   ctx: CanvasRenderingContext2D,
-  canvas: HTMLCanvasElement | null,
+  canvas: HTMLCanvasElement,
   shapesData: ShapesData
 ) => {
-  ctx.clearRect(0, 0, canvas?.width || 800, canvas?.height || 800);
+  ctx.canvas.width = canvas.offsetWidth;
+  ctx.canvas.height = canvas.offsetHeight - 4;
+
+  ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+
   shapesData.shapes.forEach((shape) => {
     ctx.fillStyle = shape.color;
     ctx.strokeStyle = shape.color;

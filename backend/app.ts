@@ -1,25 +1,10 @@
+import { Color, ShapeType } from "./definitions";
+
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
-
-enum ShapeType {
-  Line = "line",
-  Triangle = "triangle",
-  Rectangle = "rectangle",
-  Circle = "circle",
-}
-
-enum Color {
-  Red = "red",
-  Orange = "orange",
-  Yellow = "yellow",
-  Green = "green",
-  Blue = "blue",
-  Indigo = "indigo",
-  Violet = "violet",
-}
 
 const getRandomValue = (values, valueToDismiss) => {
   const filteredValues = values.filter((color) => color !== valueToDismiss);
